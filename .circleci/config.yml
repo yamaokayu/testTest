@@ -29,3 +29,19 @@ jobs:
       - run:
           name: Run test
           command: npm run test
+workflows:
+  version: 2
+  setup_and_deploy:
+    jobs:
+      - setup
+      - test:
+          requires:
+            - setup
+      - deploy_dev:
+          requires:
+            - test
+          filters:
+            branches:
+              ignore:
+                - develop
+                - master
