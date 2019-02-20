@@ -3,7 +3,7 @@ jobs:
   setup:
     working_directory: ~/workspace
     docker:
-      - image: circleci/node:8.11.4
+      - image: circleci/node:8.14
     steps:
       - checkout
       - restore_cache:
@@ -20,7 +20,7 @@ jobs:
   test:
     working_directory: ~/workspace
     docker:
-      - image: circleci/node:8.11.4
+      - image: circleci/node:8.14
     steps:
       - checkout
       - restore_cache:
@@ -31,7 +31,7 @@ jobs:
           command: npm run test
 workflows:
   version: 2
-  setup_and_deploy:
+  setup_and_test:
     jobs:
       - setup
       - test:
