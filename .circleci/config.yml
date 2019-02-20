@@ -37,11 +37,3 @@ workflows:
       - test:
           requires:
             - setup
-      - deploy_dev:
-          requires:
-            - test
-          filters:
-            branches:
-              ignore:
-                - develop
-                - master
