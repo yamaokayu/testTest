@@ -1,4 +1,5 @@
 version: 2 
+jobs:
   setup:
     working_directory: ~/workspace
     docker:
