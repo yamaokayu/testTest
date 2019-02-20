@@ -2,7 +2,8 @@ version: 2
 jobs:       
   build:
     docker:
-      - image: iganarix/base-alpine
+      - image: circleci/node:8.14
+      - image: mongo:3.6
     steps:
       - checkout
       - run:
