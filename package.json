@@ -3,7 +3,7 @@
   "scripts": {
     "autofix-js": "eslint --fix **/*.js",
     "lint-js": "eslint",
-    "test": "mocha --require babel-core/register",
+    "test": "npm install && mocha --require babel-core/register",
     "_comment": "istanbulコマンドでmochaも実行している",
     "cover": "NODE_ENV=test istanbul cover --report text _mocha",
     "mocha": "NODE_ENV=test mocha"
