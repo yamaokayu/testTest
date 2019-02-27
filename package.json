@@ -1,4 +1,5 @@
 {
+  "name": "circle-test",
   "scripts": {
     "autofix-js": "eslint --fix **/*.js",
     "lint-js": "eslint",
