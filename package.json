@@ -1,14 +1,55 @@
 {
   "scripts": {
-    "test": "mocha",
+    "autofix-js": "eslint --fix **/*.js",
+    "lint-js": "eslint",
+    "test": "npm run autofix-js && mocha --require babel-core/register",
     "_comment": "istanbulコマンドでmochaも実行している",
     "cover": "NODE_ENV=test istanbul cover --report text _mocha",
     "mocha": "NODE_ENV=test mocha"
   },
   "devDependencies": {
-    "eslint": "^2.5.3",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-syntax-object-rest-spread": "7.0.0",
+    "@babel/plugin-transform-strict-mode": "7.0.0",
+    "@babel/polyfill": "7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "7.0.0",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "10.0.1",
+    "babel-plugin-module-resolver": "3.1.1",
+    "babel-plugin-transform-strict-mode": "6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "eslint": "5.11.1",
+    "eslint-config-prettier": "3.3.0",
+    "eslint-import-resolver-babel-module": "5.0.1",
+    "eslint-plugin-immutable": "1.0.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsdoc": "3.14.1",
+    "eslint-plugin-lodash": "5.1.0",
+    "eslint-plugin-max-comments-per-function": "0.0.2",
+    "eslint-plugin-node": "8.0.0",
+    "eslint-plugin-prefer-arrow-in-array": "git+https://github.com/miangraham/eslint-plugin-prefer-arrow-in-array.git#f1cae36c3c749485e5845bb96776c073cb1d50df",
+    "eslint-plugin-prettier": "3.0.0",
+    "eslint-plugin-promise": "4.0.1",
+    "eslint-plugin-security": "1.4.0",
+    "husky": "1.2.1",
+    "lint-staged": "8.1.0",
+    "nodemon": "1.18.9",
+    "doctoc": "1.4.0",
+    "acorn": "6.1.0",
     "istanbul": "^0.4.3",
-    "mocha": "^2.4.5",
+    "mocha": "^5.2.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "prettier": "1.15.3",
     "should": "^8.3.0"
+  },
+  "license": "ISC",
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "eslint"
+    ]
   }
 }

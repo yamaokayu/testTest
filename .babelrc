@@ -1,0 +1,16 @@
+{
+  "comments": false,
+  "presets": [
+    ["env", {
+      "targets": {
+        "chrome": "58"
+      }
+    }]
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./scripts"],
+      "extensions": [".js", ".jsx"]
+    }]
+  ]
+}
