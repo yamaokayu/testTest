@@ -231,7 +231,7 @@ class IndexedList {
     /**
      * @returns {Array<*>}
      */
-    getEnumerator() {
+    getEnumerator(a) {
         return this._list;
     }
 }
