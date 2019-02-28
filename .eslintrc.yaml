@@ -10,6 +10,7 @@ parserOptions:
 env:
   node: true
   es6: true
+  mocha: true
 plugins:
   - import
   - immutable

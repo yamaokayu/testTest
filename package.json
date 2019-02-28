@@ -3,22 +3,21 @@
   "scripts": {
     "autofix-js": "eslint --fix **/*.js",
     "lint-js": "npm install && eslint .",
-    "test": "npm install && mocha --require babel-core/register",
+    "test": "npm install && mocha --require @babel/register",
     "mocha": "NODE_ENV=test mocha"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/plugin-syntax-object-rest-spread": "7.0.0",
     "@babel/plugin-transform-strict-mode": "7.0.0",
-    "@babel/polyfill": "7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.3.4",
+    "@babel/plugin-transform-async-to-generator": "7.3.4",
+    "@babel/polyfill": "7.2.5",
     "@babel/preset-env": "^7.0.0",
     "@babel/register": "7.0.0",
-    "babel": "^6.23.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "10.0.1",
     "babel-plugin-module-resolver": "3.1.1",
     "babel-plugin-transform-strict-mode": "6.24.1",
-    "babel-preset-env": "^1.7.0",
+    "babel-eslint": "10.0.1",
     "chai": "^4.2.0",
     "eslint": "5.11.1",
     "eslint-config-prettier": "3.3.0",
@@ -33,6 +32,10 @@
     "eslint-plugin-prettier": "3.0.0",
     "eslint-plugin-promise": "4.0.1",
     "eslint-plugin-security": "1.4.0",
+    "husky": "1.2.1",
+    "json2csv": "4.3.2",
+    "lint-staged": "8.1.0",
+    "nodemon": "1.18.9",
     "acorn": "6.1.0",
     "istanbul": "^0.4.3",
     "mocha": "^5.2.0",
@@ -41,5 +44,23 @@
     "prettier": "1.15.3",
     "should": "^8.3.0"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "prettier --write",
+        "eslint --fix",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "dist/**/*",
+      "node_modules/**/*"
+    ]
+  }
 }

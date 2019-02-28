@@ -1,16 +1,24 @@
 {
   "comments": false,
-  "presets": [
-    ["env", {
-      "targets": {
-        "chrome": "58"
-      }
-    }]
-  ],
+
   "plugins": [
-    ["module-resolver", {
-      "root": ["./scripts"],
+    ["@babel/plugin-proposal-object-rest-spread"],
+    ["@babel/plugin-transform-async-to-generator"],
+    ["babel-plugin-module-resolver", {
+      "root": ["scripts"],
       "extensions": [".js", ".jsx"]
     }]
+  ],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "mocha": true,
+          "chrome": "58",
+          "esmodules": true
+        }
+      }
+    ]
   ]
 }
