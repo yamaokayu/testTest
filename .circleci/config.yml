@@ -27,11 +27,8 @@ jobs:
           name: Restore npm dependencies
           key: npm-{{ checksum "package-lock.json" }}-{{ .Environment.CACHE_VERSION_NPM }}
       - run:
-          name: Install dependencies
-          command: npm install
-      - run:
           name: "Lint"
-          command: eslint .
+          command: npm run lint-js
       - run:
           name: Run test
           command: npm run test
