@@ -1,5 +1,3 @@
-/* eslint-disable import/no-commonjs */
-
 /**
  * @name IndexedList
  * @class
@@ -151,11 +149,11 @@ class IndexedList {
     containsKey(key) {
         return this._index.hasOwnProperty(key);
     }
-    /* eslint-disable-next-line no-unused-vars */
     /**
      * @param {Array.<*>} array
      * @param {number} arrayIndex
      */
+    /* eslint-disable-next-line no-unused-vars */
     copyTo(array, arrayIndex) {
         throw new SyntaxError('NotImplemented');
     }
