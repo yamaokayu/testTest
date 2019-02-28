@@ -4,7 +4,8 @@
     "autofix-js": "eslint --fix **/*.js",
     "lint-js": "npm install && eslint .",
     "test": "npm install && mocha --require @babel/register",
-    "mocha": "NODE_ENV=test mocha"
+    "mocha": "NODE_ENV=test mocha",
+    "validate": "eslint ."
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -45,11 +46,6 @@
     "should": "^8.3.0"
   },
   "license": "ISC",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "linters": {
       "*.js": [
