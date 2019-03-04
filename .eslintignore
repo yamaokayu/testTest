@@ -1,6 +1,5 @@
-/admin/**
+/frameworks/**
 /build/**
+/res/**
 /dist/**
-/docs/**
 /node_modules/**
-
