@@ -1,0 +1,14 @@
+node_modules
+.DS_Store
+.vagrant/
+.idea
+.jshintignore
+.jshintrc
+.eslintcache
+
+~$*.xlsx
+static/module/
+
+logs/*
+!logs/.gitkeep
+/nbproject/private/

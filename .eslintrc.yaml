@@ -1,0 +1,276 @@
+---
+root: true
+parser: "babel-eslint"
+parserOptions:
+  ecmaVersion: 2017
+  sourceType: module
+  ecmaFeatures:
+    experimentalObjectRestSpread: true
+    impliedStrict: true
+env:
+  node: true
+  es6: true
+  mocha: true
+plugins:
+  - import
+  - immutable
+  - jsdoc
+  - lodash
+  - "max-comments-per-function"
+  - node
+  - "prefer-arrow-in-array"
+  - prettier
+  - promise
+  - security
+settings:
+  import/resolver: babel-module
+extends:
+  - "eslint:recommended"
+  - prettier
+rules:
+  # Core rules
+  array-callback-return: error
+  arrow-body-style:
+    - error
+    - "as-needed"
+  arrow-spacing: error
+  block-scoped-var: error
+  callback-return:
+    - off
+    - - callback
+      - cb
+      - next
+      - done
+  camelcase:
+    - off
+    - properties: never
+  complexity:
+    - error
+    - 40
+  constructor-super: error
+  curly:
+    - error
+    - all
+  eqeqeq: error
+  for-direction: error
+  func-style:
+    - off
+    - declaration
+    - allowArrowFunctions: true
+  global-require: off
+  handle-callback-err: off
+  id-blacklist:
+    - error
+  linebreak-style:
+    - error
+    - unix
+  max-depth:
+    - error
+    - 5
+  max-lines:
+    - error
+    - 1500
+  max-lines-per-function:
+    - error
+    - 150
+  max-nested-callbacks:
+    - error
+    - 3
+  max-params:
+    - error
+    - 7
+  max-statements:
+    - error
+    - 150
+  max-statements-per-line:
+    - error
+    - max: 2
+  object-shorthand: off
+  one-var:
+    - off
+    - never
+  prefer-arrow-callback: off
+  prefer-const: error
+  prefer-numeric-literals: error
+  prefer-rest-params: off
+  radix: error
+  require-yield: error
+  spaced-comment:
+    - error
+    - always
+    - exceptions:
+        - "-"
+        - "+"
+        - "*"
+        - "//"
+      block:
+        balanced: true
+  strict: off
+  use-isnan: error
+  valid-typeof: error
+  wrap-iife: off
+
+  # Forbidden patterns
+  no-underscore-dangle: off
+  no-alert: error
+  no-array-constructor: error
+  no-bitwise: off
+  no-caller: error
+  no-case-declarations: error
+  no-catch-shadow: error
+  no-class-assign: error
+  no-cond-assign: error
+  no-console: error
+  no-const-assign: error
+  no-constant-condition: off
+  no-continue: off
+  no-control-regex: error
+  no-debugger: error
+  no-delete-var: off
+  no-dupe-args: error
+  no-dupe-class-members: error
+  no-dupe-keys: error
+  no-duplicate-case: error
+  no-duplicate-imports: error
+  no-empty: error
+  no-empty-character-class: error
+  no-empty-pattern: error
+  no-eq-null: error
+  no-eval: error
+  no-ex-assign: error
+  no-extend-native: off
+  no-extra-bind: error
+  no-extra-boolean-cast: error
+  no-extra-label: error
+  no-fallthrough: error
+  no-floating-decimal: error
+  no-func-assign: error
+  no-global-assign: error
+  no-implied-eval: error
+  no-inline-comments: off
+  no-inner-declarations: error
+  no-invalid-regexp: error
+  no-invalid-this: off
+  no-irregular-whitespace: error
+  no-iterator: error
+  no-label-var: off
+  no-labels: error
+  no-lone-blocks: error
+  no-lonely-if: off
+  no-loop-func: error
+  no-mixed-requires: error
+  no-mixed-spaces-and-tabs:
+    - error
+    - false
+  no-multi-str: error
+  no-nested-ternary: error
+  no-new: error
+  no-new-func: off
+  no-new-object: error
+  no-new-require: error
+  no-new-symbol: error
+  no-new-wrappers: error
+  no-obj-calls: error
+  no-octal: error
+  no-octal-escape: error
+  no-param-reassign: off
+  no-path-concat: error
+  no-process-env: error
+  no-process-exit: error
+  no-proto: error
+  no-redeclare: error
+  no-regex-spaces: error
+  no-restricted-syntax:
+    - off
+    - ForInStatement
+  no-return-assign: error
+  no-return-await: error
+  no-script-url: error
+  no-self-assign: error
+  no-self-compare: error
+  no-sequences: error
+  no-shadow: off
+  no-shadow-restricted-names: error
+  no-sparse-arrays: error
+  no-sync: error
+  no-tabs: error
+  no-this-before-super: error
+  no-throw-literal: error
+  no-undef: error
+  no-undef-init: error
+  no-unexpected-multiline: error
+  no-unmodified-loop-condition: error
+  no-unneeded-ternary: error
+  no-unreachable: error
+  no-unsafe-finally: error
+  no-unsafe-negation: error
+  no-unused-expressions: error
+  no-unused-labels: error
+  no-use-before-define: error
+  no-useless-call: error
+  no-useless-computed-key: error
+  no-useless-constructor: error
+  no-useless-concat: off
+  no-useless-rename: error
+  no-var: off
+  no-void: error
+  no-warning-comments:
+    - error
+    - terms:
+        - "----"
+        - "XXX"
+  no-with: error
+  quotes: [ERROR, 'single', { allowTemplateLiterals: true }]
+  # Import rules
+  import/extensions: error
+  import/export: error
+  import/first: error
+  import/no-absolute-path: error
+  import/no-amd: error
+  import/no-anonymous-default-export: error
+  import/no-commonjs: off
+  import/no-duplicates: error
+  import/no-dynamic-require: off
+  import/no-mutable-exports: error
+  import/no-named-default: error
+  import/no-named-as-default: error
+  import/no-named-as-default-member: error
+
+  # JSDoc rules
+  jsdoc/check-param-names: off
+  jsdoc/check-tag-names: off
+  jsdoc/check-types: error
+
+  # Node rules
+  node/exports-style:
+    - error
+    - module.exports
+  node/no-deprecated-api: error
+  node/no-extraneous-import: error
+  node/no-extraneous-require: error
+
+  # Prefer arrow in array
+  prefer-arrow-in-array/prefer-arrow-in-array: off
+
+  # Formatting
+  prettier/prettier:
+    - off
+    - singleQuote: true
+      tabWidth: 4
+      bracketSpacing: false
+      printWidth: 100
+
+  # Promise rules
+  promise/always-return: error
+  promise/avoid-new: error
+  promise/catch-or-return:
+    - error
+    - terminationMethod:
+        - catch
+        - asCallback
+        - finally
+  promise/no-callback-in-promise: error
+  promise/no-native: error
+  promise/no-nesting: error
+  promise/no-return-wrap: error
+  promise/param-names: error

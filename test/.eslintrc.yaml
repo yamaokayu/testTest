@@ -1,0 +1,7 @@
+---
+rules:
+  no-process-exit: off
+  no-unused-expressions: off
+  promise/prefer-await-to-then: off
+  security/detect-child-process: off
+  security/detect-non-literal-fs-filename: off
