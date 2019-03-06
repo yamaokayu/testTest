@@ -5,7 +5,7 @@ import curl from 'curl';
 const expect = chai.expect;
 chai.should();
 
-curl.get('http://localhost:8000', {}, (err, response, body) =>{
+curl.get('http://0.0.0.0:8080', {}, (err, response, body) =>{
     console.log('ok');
 });
 
