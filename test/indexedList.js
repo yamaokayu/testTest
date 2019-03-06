@@ -5,8 +5,13 @@ import curl from 'curl';
 const expect = chai.expect;
 chai.should();
 
-curl.get('http://0.0.0.0:8080', {}, (err, response, body) =>{
-    console.log('ok');
+console.log('curl.get');
+curl.get('http://0.0.0.0:8000', {}, (err, response, body) =>{
+    if (err) {
+        console.log('failed');
+    } else {
+        console.log('ok');
+    }
 });
 
 function constructorTest() {
