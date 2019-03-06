@@ -5,15 +5,22 @@ import curl from 'curl';
 const expect = chai.expect;
 chai.should();
 
-console.log('curl.get');
-curl.get('http://0.0.0.0:8000', {}, (err, response, body) =>{
-    if (err) {
-        console.log('failed');
-    } else {
-        console.log('ok');
-    }
-});
 
+var testing = function() {
+    describe('indexedList()', () => {
+        // Testing to all public methods in class
+        constructorTest();
+        resetTest();
+        getIndexedListItemTest();
+        getByKeyTest();
+        getByIndexTest();
+        countTest();
+        isReadOnlyTest();
+        keysTest();
+        valuesTest();
+        // ...
+    });
+};
 function constructorTest() {
     it('indexedList constructor()', done => {
         // system test, normal, boundary
@@ -199,16 +206,14 @@ function valuesTest() {
     });
 }
 
-describe('indexedList()', () => {
-    // Testing to all public methods in class
-    constructorTest();
-    resetTest();
-    getIndexedListItemTest();
-    getByKeyTest();
-    getByIndexTest();
-    countTest();
-    isReadOnlyTest();
-    keysTest();
-    valuesTest();
-    // ...
-});
+console.log('curl.get');
+for (var i = 0; i < 5; ++i) {
+    curl.get('http://0.0.0.0:8000', {}, (err, response, body) =>{
+        if (err) {
+            console.log('failed');
+        } else {
+            console.log('ok');
+            testing();
+        }
+    });
+}
