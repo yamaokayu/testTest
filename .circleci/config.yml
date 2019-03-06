@@ -31,7 +31,7 @@ jobs:
           key: npm-{{ checksum "package-lock.json" }}-{{ .Environment.CACHE_VERSION_NPM }}
       - run:
           name: Run http-browser
-          command: npm install http-server && npm run httpd
+          command: npm install && npm run start
           background: true
       - run:
           name: Run test
