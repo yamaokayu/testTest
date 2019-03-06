@@ -1,8 +1,13 @@
 import {IndexedList} from 'indexedList';
 import assert from 'assert';
 import chai from 'chai';
+import curl from 'curl';
 const expect = chai.expect;
 chai.should();
+
+curl.get('http://localhost:8000', {}, (err, response, body) =>{
+    console.log('ok');
+});
 
 function constructorTest() {
     it('indexedList constructor()', done => {
