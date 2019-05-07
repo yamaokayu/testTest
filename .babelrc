@@ -8,7 +8,7 @@
     ["@babel/plugin-transform-async-to-generator"],
     ["babel-plugin-module-resolver", {
       "root": ["scripts"],
-      "extensions": [".js", ".jsx"]
+      "extensions": [".js"]
     }]
   ],
   "presets": [

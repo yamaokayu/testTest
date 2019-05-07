@@ -8,8 +8,8 @@
     "build": "gulp babel",
     "build-web": "gulp babel && node tools/compilation/swapSrcListToDist.js && cocos compile -p web -m release",
     "lint-js": "npm install && eslint --cache .",
-    "check": "mocha --require @babel/register",
-    "test": "npm install && mocha --require @babel/register",
+    "check": "mocha --require @babel/register --recursive ./test/**/*.test.js --timeout 10000",
+    "test": "npm install && mocha --require @babel/register --recursive ./test/**/*.test.js --timeout 10000",
     "mocha": "NODE_ENV=test mocha",
     "validate": "eslint ."
   },
@@ -46,17 +46,17 @@
     "eslint-plugin-security": "1.4.0",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
-    "chai": "^4.2.0",
+    "chai": "4.2.0",
     "husky": "1.2.1",
     "json2csv": "4.3.2",
     "lint-staged": "8.1.4",
     "nodemon": "1.18.9",
     "acorn": "6.1.0",
-    "mocha": "^5.2.0",
-    "should": "^8.3.0",
+    "mocha": "6.0.2",
+    "should": "13.2.3",
     "prettier": "1.16.4",
     "curl": "0.1.4",
-    "http-server": "0.11.1"
+    "puppeteer": "1.13.0"
   },
   "license": "ISC",
   "dependencies": {
