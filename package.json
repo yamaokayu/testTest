@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "browser-sync start --server --files * --port 8000",
+    "headless_start": "browser-sync start --server --files * --port 8000 --no-open",
     "build": "gulp babel",
     "build-web": "gulp babel && node tools/compilation/swapSrcListToDist.js && cocos compile -p web -m release",
     "lint-js": "npm install && eslint --cache .",
