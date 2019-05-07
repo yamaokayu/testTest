@@ -1,7 +1,7 @@
 import curl from 'curl';
 import puppeteer from 'puppeteer';
 
-const url = 'http://0.0.0.0:8000';
+const url = 'http://0.0.0.0:8000/test.html';
 const retryWaitSeconds = 5;
 
 const curlTest = () => new Promise(resolve => curl.get(url, {}, err => resolve(!err)));
