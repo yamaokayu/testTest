@@ -1,0 +1,5 @@
+/frameworks/**
+/build/**
+/res/**
+/dist/**
+/node_modules/**

@@ -1,0 +1,8 @@
+---
+"*.js":
+  - "npm run autofix-js --"
+  - "git add"
+  - "npm run lint-js --"
+"README.md":
+  - "npx doctoc --github --notitle"
+  - "git add"

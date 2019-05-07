@@ -1,15 +1,46 @@
-version: 2 
-jobs:       
-  build:
+---
+version: 2
+jobs:
+  setup:
+    working_directory: ~/workspace
+    parallelism: 1
+    shell: /bin/bash --login
     docker:
-      - image: iganarix/base-alpine
+      - image: circleci/node:10-browsers
     steps:
       - checkout
+      - restore_cache:
+          name: Restore npm dependencies
+          key: npm-{{ checksum "package-lock.json" }}-{{ .Environment.CACHE_VERSION_NPM }}
       - run:
-          name: Hello World TEST
-          command: "echo 'Hello World !!!'"
+          name: Install dependencies
+          command: npm install
+      - save_cache:
+          name: Cache npm dependencies
+          key: npm-{{ checksum "package-lock.json" }}-{{ .Environment.CACHE_VERSION_NPM }}
+          paths:
+            - ~/workspace/node_modules
+  test:
+    working_directory: ~/workspace
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore npm dependencies
+          key: npm-{{ checksum "package-lock.json" }}-{{ .Environment.CACHE_VERSION_NPM }}
+      - run:
+          name: Run http-browser
+          command: npm install && npm run headless_start
+          background: true
+      - run:
+          name: Run test
+          command: npm run test
 workflows:
   version: 2
-  build_test:
+  setup_and_test:
     jobs:
-      - build
+      - setup
+      - test:
+          requires:
+            - setup
